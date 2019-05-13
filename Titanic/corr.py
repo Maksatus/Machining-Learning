@@ -1,4 +1,6 @@
 import pandas
 
 data = pandas.read_csv('titanic.csv')
-print(data.corr().to_string())
+ages = data['Age'].dropna()
+
+print("{:0.2f} {:0.2f}".format(ages.mean(), ages.median()))
